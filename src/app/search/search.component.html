@@ -11,7 +11,7 @@
 </div>
 
 <div *ngIf="string.value != '' && !searchRes">
-  <h2>Data on its way</h2>
+  <div class="loader"></div>
 </div>
 
 <div *ngIf="string.value != '' && total == 0">
