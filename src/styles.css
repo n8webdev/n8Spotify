@@ -7,9 +7,9 @@
     height: 120px;
     position: fixed;
     left: 50%;
-    margin-left: -20px;
+    margin-left: -60px;
     top: 50%;
-    margin-top: -20px;
+    margin-top: -60px;
     animation: spin 2s linear infinite;
 }
 
