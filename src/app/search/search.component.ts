@@ -11,6 +11,7 @@ export class SearchComponent implements OnInit {
 
   searchStr: string;
   searchRes: Artist;
+  total: number;
 
   constructor(private _spotifyService: SpotifyService) { }
 
@@ -18,10 +19,13 @@ export class SearchComponent implements OnInit {
   }
 
   searchMusic() {
-    this._spotifyService.searchMusic(this.searchStr)
+    if(this.searchStr !== '') {
+      this._spotifyService.searchMusic(this.searchStr)
       .subscribe(res => {
+        this.total = res.artists.total;
         this.searchRes = res.artists.items;
       })
+    }
   }
 
 }

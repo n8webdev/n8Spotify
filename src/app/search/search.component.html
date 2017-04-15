@@ -2,16 +2,28 @@
 <p class="lead">Use ngSpotify App to browse the latest releases from Spotify!</p>
 <form>
   <div class="form-group">
-    <input (keyup)="searchMusic()" [(ngModel)]='searchStr' name='searchStr' type="text" class="form-control" placeholder="What are you looking for?">
+    <input #string (keyup)="searchMusic()" [(ngModel)]='searchStr' name='searchStr' type="text" class="form-control" placeholder="What artist or band are you looking for?">
   </div>
 </form>
 
-<div *ngIf="searchRes">
+<div *ngIf="string.value == ''">
+  <p>Waiting for your request...</p>
+</div>
+
+<div *ngIf="string.value != '' && !searchRes">
+  <h2>Data on its way</h2>
+</div>
+
+<div *ngIf="string.value != '' && total == 0">
+  <h4>Oops! No results for your request :(</h4>
+</div>
+
+<div *ngIf="searchRes && searchStr != ''">
   <div class="row">
     <div *ngFor="let res of searchRes"  class="col-md-12">
 
       <div class="search-res well">
-        <h4>{{ res.name }}</h4>
+        <h4><a routerLink='/artist/{{ res.id }}'>{{ res.name }}</a></h4>
         <p *ngIf="res.genres.length > 0" >
           <strong>Genres: </strong>
           <span *ngFor="let genre of res.genres" >{{genre}} </span>
