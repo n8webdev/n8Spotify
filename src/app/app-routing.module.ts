@@ -1,3 +1,4 @@
+import { AlbumComponent } from './album/album.component';
 import { ArtistComponent } from './artist/artist.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'search' },
   { path: 'search', component: SearchComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'artist/:id', component: ArtistComponent }
+  { path: 'artist/:id', component: ArtistComponent },
+  { path: 'album/:id', component: AlbumComponent }
 ];
 
 @NgModule({
