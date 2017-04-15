@@ -5,3 +5,19 @@
     <input (keyup)="searchMusic()" [(ngModel)]='searchStr' name='searchStr' type="text" class="form-control" placeholder="What are you looking for?">
   </div>
 </form>
+
+<div *ngIf="searchRes">
+  <div class="row">
+    <div *ngFor="let res of searchRes"  class="col-md-12">
+
+      <div class="search-res well">
+        <h4>{{ res.name }}</h4>
+        <p *ngIf="res.genres.length > 0" >
+          <strong>Genres: </strong>
+          <span *ngFor="let genre of res.genres" >{{genre}} </span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
