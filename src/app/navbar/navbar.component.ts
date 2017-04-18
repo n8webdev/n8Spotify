@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  expand: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  expandMenu (){
+    this.expand = !this.expand;
   }
 
 }
