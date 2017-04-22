@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .loader {
     border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #333; /* Blue */
+    border-top: 8px solid #333; /* Dark grey */
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -10,7 +10,7 @@
     margin-left: -40px;
     top: 50%;
     margin-top: -40px;
-    animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
